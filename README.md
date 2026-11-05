@@ -4,7 +4,7 @@ SpaceX prices a Falcon 9 launch at about **$62M**, while other providers charge 
 
 This project collects public launch data, explores what drives a successful landing, and trains classifiers to predict the outcome. It is my capstone for the [IBM Data Science Professional Certificate](https://www.coursera.org/professional-certificates/ibm-data-science) (graded 100%).
 
-📄 **[Read the full report (PDF)](report/Data_Science_Capstone_Project_Report.pdf)**
+🌐 **[Project page](https://solexj1000.github.io/SpaceX-Falcon-9-first-stage-Landing-Prediction/)** · 📄 **[Full report (PDF)](https://solexj1000.github.io/SpaceX-Falcon-9-first-stage-Landing-Prediction/Data_Science_Capstone_Project_Report.pdf)**
 
 ---
 
@@ -19,7 +19,7 @@ This project collects public launch data, explores what drives a successful land
 | Best model | Decision Tree, 86.1% cross-validation accuracy |
 | Test accuracy | 83.3% for all four models (15 of 18) |
 
-![Model accuracy](images/model_accuracy.png)
+![Model accuracy](docs/images/model_accuracy.png)
 
 ---
 
@@ -27,25 +27,25 @@ This project collects public launch data, explores what drives a successful land
 
 **1. Experience is the biggest driver.** Landing success rose from 43% over the first 30 flights to 73% and then 83%. Every site and orbit improves with flight number, so part of what looks like a payload or site effect is really an experience effect.
 
-![Experience curve](images/insight_experience_curve.png)
+![Experience curve](docs/images/insight_experience_curve.png)
 
 **2. Hardware and reuse matter more than payload.** Boosters with landing legs landed 83% of the time, compared with 5% without. Flight-proven (re-used) boosters landed 87% of the time, versus 27% for first-flight cores.
 
-![Hardware and reuse](images/insight_hardware_reuse.png)
+![Hardware and reuse](docs/images/insight_hardware_reuse.png)
 
 **3. Orbit matters.** ES-L1, GEO, HEO and SSO all landed 100% of the time, but with very few launches. GTO is the hardest of the common orbits at 52%.
 
-![Success by orbit](images/eda_success_by_orbit.png)
+![Success by orbit](docs/images/eda_success_by_orbit.png)
 
 **4. Location.** All four launch sites are on the coast and 1–2 km from a railway and highway, but about 15 km from the nearest city. KSC LC-39A has the best record. CCAFS LC-40 has the lowest, partly because most of the early flights launched there.
 
 | Launch sites | Outcomes at KSC LC-39A | Proximities of VAFB SLC-4E |
 |---|---|---|
-| ![](images/map_launch_sites.png) | ![](images/map_outcomes_ksc.png) | ![](images/map_vafb_proximities.png) |
+| ![](docs/images/map_launch_sites.png) | ![](docs/images/map_outcomes_ksc.png) | ![](docs/images/map_vafb_proximities.png) |
 
 **5. The model's mistakes are all false positives.** All four models never missed a real landing, but they predicted a landing for 3 of the 6 failures. So any cost estimate built on them is slightly optimistic.
 
-<img src="images/confusion_matrix_decision_tree.png" width="420">
+<img src="docs/images/confusion_matrix_decision_tree.png" width="420">
 
 ---
 
@@ -53,7 +53,7 @@ This project collects public launch data, explores what drives a successful land
 
 A Plotly Dash app with a launch-site dropdown and a payload range slider. The dropdown drives a success pie chart and the slider filters a payload vs. outcome scatter plot.
 
-![Dashboard](images/dashboard.png)
+![Dashboard](docs/images/dashboard.png)
 
 ---
 
@@ -73,8 +73,7 @@ A Plotly Dash app with a launch-site dropdown and a payload range slider. The dr
 ```
 ├── notebooks/     # analysis notebooks, in order
 ├── dashboard/     # Plotly Dash app + its dataset
-├── images/        # charts, maps and screenshots used in this README
-└── report/        # final presentation (PDF)
+└── docs/          # project web page (GitHub Pages), report PDF and images
 ```
 
 > GitHub does not render the interactive Folium maps inside notebooks. The map screenshots above show what they look like.
